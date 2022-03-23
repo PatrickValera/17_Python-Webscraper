@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Recipe Search</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <form action="/search" method="POST">
+        <input type="text" name="query" placeholder="Search recpie" />
+        <input type="submit" value="Search"/>
+    </form>
+    </div>
+{% endblock %}

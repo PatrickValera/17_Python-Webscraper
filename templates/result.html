@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Results</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    {% for food in foodList %}
+    <div class="card-container">
+        <div class="card-image-container">
+        <img src={{food.imgSrc}} style="width:100px"/>
+        </div>
+        <div class="card-description-container">
+            <a href='/recipe/{{food.id}}/{{food.tag}}'>
+                <h3>{{food.name.text if food.name else "no name"}}</h3>
+                <span>{{food.rating.text if food.rating else "no rating"}}</span>
+                <span>{{food.rating_count.text if food.rating_count else "no rating_count"}}</span>
+                <p>{{food.description.text if food.description else "no description"}}</p>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<h3>{{food.name}}</h3>
+
+<h4>Recipes</h4>
+<ul>
+    {% for ingredient in food.ingredients %}
+    <li>{{ingredient.text}}</li>
+    {% endfor %}
+</ul>
+
+<h4>Directions</h4>
+<ul>
+    {% for direction in food.directions %}
+    <li>{{direction.text}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
